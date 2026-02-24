@@ -14,7 +14,7 @@ with
         union all
         select null as id
         union all
-        select {{DBT_FIRST_ENV_VAR}} as C1
+        select {{ env_var('DBT_FIRST_ENV_VAR') }} as C1
 
     )
 
