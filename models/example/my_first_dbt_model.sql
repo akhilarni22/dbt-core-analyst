@@ -14,7 +14,7 @@ with
         union all
         select null as id
         union all
-        select {{DBT_FIRST_ENV_VAR}} as C1
+        select cast({{ env_var('DBT_FIRST_ENV_VAR', '0') }} as integer) as id
 
     )
 
